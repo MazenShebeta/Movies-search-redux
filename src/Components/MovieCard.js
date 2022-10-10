@@ -16,3 +16,9 @@ const MovieCard = (title, description, url) => {
 }
 
 export default MovieCard;
+
+MovieCard.defaultProps = {
+    title: "Movie Title",
+    description: "Movie Description",
+    url: ""
+}
