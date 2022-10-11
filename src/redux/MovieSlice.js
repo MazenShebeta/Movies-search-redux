@@ -45,13 +45,11 @@ const movieSlice = createSlice({
         // removeMovie: (state, action) => {
         //     state.movies = state.movies.filter((movie) => movie.id !== action.payload);
         // },
-        searchMovie: (state, action) => {
-            state.filteredMovies = state.movies.filter((item) => {
-                return item.name.toLowerCase().includes(action.payload.toLowerCase());
-              });
+        searchMovies: (state, action) => {
+            state.filteredMovies = state.movies.filter((movie) => movie.title.toLowerCase().includes(action.payload.toLowerCase()));
         }
     }
 })
 
-export const {searchMovie} = movieSlice.actions;
+export const {searchMovies} = movieSlice.actions;
 export default movieSlice.reducer;

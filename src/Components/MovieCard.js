@@ -1,7 +1,7 @@
 import react from 'react'
 import Card from 'react-bootstrap/Card';
 
-const MovieCard = (title, description, url) => {
+const MovieCard = ({title, description, url}) => {
   return (
     <div>
         <Card style={{ width: '18rem' }}>

@@ -1,18 +1,23 @@
 import MovieCard from "./MovieCard";
 import { useSelector, useDispatch } from "react-redux";
-import { searchMovie } from "../redux/MovieSlice";
+import { searchMovies } from "../redux/MovieSlice";
+import './MovieList.css';
 
 
 const MovieList = () => {
-    const dispatch = useDispatch();
     const movies = useSelector((state) => state.movie.filteredMovies);
+    const dispatch = useDispatch();
+
 
     return (
         <div>
-            <input type="text" placeholder="Search Movies" onChange={(e) => dispatch(searchMovie(e.target.value))} />
+            <input
+          type="text"
+          onChange={(e) => dispatch(searchMovies(e.target.value))}
+        />
             <div className="movie-list">
             {movies.map((movie) => (
-                <MovieCard title={movie.title} description={movie.description} url={movie.url}/>
+                <MovieCard title={movie.title} url={movie.url} description={movie.description} />
             ))}
             </div>
         </div>
